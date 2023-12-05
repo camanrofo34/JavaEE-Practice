@@ -1,8 +1,13 @@
-domain\Persona.class
-servicio\PersonaServiceRemote.class
+ciclovidaJPA\ActualizarObjetoJPA.class
 servicio\PersonaService.class
-domain\Usuario.class
+ciclovidaJPA\EliminarObjetoJPA.class
+ciclovidaJPA\PersistirObjetoJPA.class
+ciclovidaJPA\EncontrarObjetoJPA.class
 datos\PersonaDao.class
 datos\PersonaDaoImpl.class
 web\PersonaServlet.class
 servicio\PersonaServiceImpl.class
+domain\Persona.class
+servicio\PersonaServiceRemote.class
+domain\Usuario.class
+ciclovidaJPA\ActualizarObjetoSesionLarga.class
