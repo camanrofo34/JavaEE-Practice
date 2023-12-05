@@ -10,4 +10,6 @@ servicio\PersonaServiceImpl.class
 domain\Persona.class
 servicio\PersonaServiceRemote.class
 domain\Usuario.class
+asociaciones\ClienteAsociacionesJPA.class
+jpql\PruebaJPQL.class
 ciclovidaJPA\ActualizarObjetoSesionLarga.class
