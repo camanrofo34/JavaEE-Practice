@@ -15,7 +15,7 @@ import javax.persistence.*;
  */
 @Stateless
 public class PersonaDaoImpl implements PersonaDao{
-    @PersistenceContext(unitName="PersonaPU")
+    @PersistenceContext(unitName="SgaPU")
     EntityManager em;
 
     @Override

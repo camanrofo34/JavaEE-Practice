@@ -6,19 +6,25 @@ package servicio;
 
 import datos.PersonaDao;
 import domain.Persona;
-import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Resource;
+import javax.ejb.SessionContext;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  *
  * @author PC 4060TI
  */
+@Stateless
 public class PersonaServiceImpl implements PersonaService, PersonaServiceRemote {
 
-    @Inject
+ @Inject
     private PersonaDao personaDao;
-    
+
+    @Resource
+    private SessionContext contexto;
+
     @Override
     public List<Persona> listarPersonas() {
         return personaDao.findAllPersonas();
@@ -41,12 +47,16 @@ public class PersonaServiceImpl implements PersonaService, PersonaServiceRemote 
 
     @Override
     public void modificarPersona(Persona persona) {
-        personaDao.updatePersona(persona);
+        try {
+            personaDao.updatePersona(persona);
+        } catch (Throwable t) {
+            contexto.setRollbackOnly();
+            t.printStackTrace(System.out);
+        }
     }
 
     @Override
     public void eliminarPersona(Persona persona) {
         personaDao.deletePersona(persona);
     }
-
 }
